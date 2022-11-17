@@ -28,7 +28,7 @@ export default {
     },
     methods: {
         loadShopInfo() {
-            axios.get(`http://azapa.ru/api/mag/${window.location.hostname}/info`, {
+            axios.get(`https://azapa.ru/api/mag/${window.location.hostname}/info`, {
                 headers: {
                     'Access-Control-Allow-Origin': '*',
                 }
