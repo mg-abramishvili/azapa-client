@@ -7,7 +7,7 @@
 <template>
     <Header :shop="shop" />
 
-    <RouterView />
+    <RouterView :shop="shop" />
 
     <Footer :shop="shop" />
 </template>
