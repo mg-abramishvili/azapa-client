@@ -1,8 +1,10 @@
 <template>
     <div class="delivery-page">
-        <h1>Доставка и оплата</h1>
+        <div class="container">
+            <h1>Доставка и оплата</h1>
 
-        <div v-html="shop.payment_delivery_text"></div>
+            <div v-html="shop.payment_delivery_text"></div>
+        </div>
     </div>
 </template>
 
