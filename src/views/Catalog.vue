@@ -52,7 +52,7 @@ export default {
         loadProducts() {
             this.views.loading = true
 
-            axios.get(`http://azapa.ru/api/mag/${window.location.hostname}/products` + '?page=' + this.$route.params.page)
+            axios.get(`https://azapa.ru/api/mag/${window.location.hostname}/products` + '?page=' + this.$route.params.page)
             .then(response => {
                 this.products = response.data.data
 
