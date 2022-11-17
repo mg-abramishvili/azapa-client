@@ -198,6 +198,21 @@ body {
     height: 60px;
 }
 
+.delivery-page {
+    padding-top: 60px;
+    padding-bottom: 60px;
+}
+
+.about-page {
+    padding-top: 60px;
+    padding-bottom: 60px;
+}
+
+.contacts-page {
+    padding-top: 60px;
+    padding-bottom: 60px;
+}
+
 
 .footer-top {
     background-color: #f3f3f3;
