@@ -52,7 +52,7 @@ export default {
         loadProducts() {
             this.views.loading = true
 
-            axios.get('http://127.0.0.1:8000/api/mag/5rhwPL2y2vxv5aUz/products' + '?page=' + this.$route.params.page)
+            axios.get(`http://127.0.0.1:8000/api/mag/${window.location.hostname}/products` + '?page=' + this.$route.params.page)
             .then(response => {
                 this.products = response.data.data
 
