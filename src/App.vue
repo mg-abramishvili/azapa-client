@@ -28,7 +28,11 @@ export default {
     },
     methods: {
         loadShopInfo() {
-            axios.get(`http://azapa.ru/api/mag/${window.location.hostname}/info`)
+            axios.get(`http://azapa.ru/api/mag/${window.location.hostname}/info`, {
+                headers: {
+                    "Access-Control-Allow-Origin": true
+                }
+            })
             .then(response => {
                 this.shop = response.data
 
