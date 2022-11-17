@@ -24,5 +24,52 @@ import bannerImage from '@/assets/banner.jpg'
                 </div>
             </div>
         </div>
+
+        <div class="products">
+            <div class="container">
+                <div v-if="!views.loading" class="catalog-page-products">
+                    <div class="row">
+                        <div v-for="product in products" class="col-12 col-lg-3">
+                            <a href="#" class="catalog-page-products-item">
+                                <img src="@/assets/noimg_500.png" alt="">
+                                <span>{{ product.price }} руб.</span>
+
+                                <p v-if="product.name.length > 40">
+                                    {{ product.name.substring(0,40) + '...' }}
+                                </p>
+                                <p v-else>{{ product.name }}</p>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
 </template>
+
+<script>
+export default {
+    data() {
+        return {
+            products: [],
+
+            views: {
+                loading: true,
+            }
+        }
+    },
+    created() {
+        this.loadProducts()
+    },
+    methods: {
+        loadProducts() {
+            axios.get('http://127.0.0.1:8000/api/mag/5rhwPL2y2vxv5aUz/products?page=1')
+            .then(response => {
+                this.products = response.data.data.slice(0,12)
+                
+                this.views.loading = false
+            })
+        },
+    },
+}
+</script>

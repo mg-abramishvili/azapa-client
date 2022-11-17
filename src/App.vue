@@ -5,9 +5,36 @@
 </script>
 
 <template>
-    <Header />
+    <Header :shop="shop" />
 
     <RouterView />
 
-    <Footer />
+    <Footer :shop="shop" />
 </template>
+
+<script>
+export default {
+    data() {
+        return {
+            shop: {},
+
+            views: {
+                loading: true,
+            }
+        }
+    },
+    created() {
+        this.loadShopInfo()
+    },
+    methods: {
+        loadShopInfo() {
+            axios.get('http://127.0.0.1:8000/api/mag/5rhwPL2y2vxv5aUz/info')
+            .then(response => {
+                this.shop = response.data
+
+                this.views.loading = false
+            })
+        },
+    },
+}
+</script>

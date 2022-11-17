@@ -17,7 +17,7 @@
                                 <router-link :to="{name: 'Home'}">Главная</router-link>
                             </li>
                             <li>
-                                <router-link :to="{name: 'Catalog'}">Каталог</router-link>
+                                <router-link :to="{name: 'Catalog', params: {page: 1} }">Каталог</router-link>
                             </li>
                             <li>
                                 <router-link :to="{name: 'Delivery'}">Доставка и оплата</router-link>
@@ -48,3 +48,14 @@
         </div>
     </footer>
 </template>
+
+<script>
+export default {
+    props: ['shop'],
+    data() {
+        return {
+            //
+        }
+    },
+}
+</script>

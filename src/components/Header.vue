@@ -8,7 +8,7 @@
                             <router-link :to="{name: 'Home'}">Главная</router-link>
                         </li>
                         <li>
-                            <router-link :to="{name: 'Catalog'}">Каталог</router-link>
+                            <router-link :to="{name: 'Catalog', params: {page: 1} }">Каталог</router-link>
                         </li>
                         <li>
                             <router-link :to="{name: 'Delivery'}">Доставка и оплата</router-link>
@@ -35,8 +35,8 @@
                         <input type="text" class="form-control" placeholder="Поиск товара">
                     </div>
                     <div class="col header-bottom-tel">
-                        <a href="#">+7 347 123-45-67</a>
-                        <span>г. Москва, ул. Лесная, 22</span>
+                        <a href="#">{{ shop.tel }}</a>
+                        <span>{{ shop.address }}</span>
                     </div>
                     <div class="col header-bottom-cart">
                         <a href="#">
@@ -51,3 +51,14 @@
         </div>
     </header>
 </template>
+
+<script>
+export default {
+    props: ['shop'],
+    data() {
+        return {
+            //
+        }
+    },
+}
+</script>
