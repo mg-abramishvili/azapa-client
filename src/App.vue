@@ -28,7 +28,7 @@ export default {
     },
     methods: {
         loadShopInfo() {
-            axios.get(`http://127.0.0.1:8000/api/mag/${window.location.hostname}/info`)
+            axios.get(`http://azapa.ru/api/mag/${window.location.hostname}/info`)
             .then(response => {
                 this.shop = response.data
 

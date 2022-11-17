@@ -63,7 +63,7 @@ export default {
     },
     methods: {
         loadProducts() {
-            axios.get(`http://127.0.0.1:8000/api/mag/${window.location.hostname}/products?page=1`)
+            axios.get(`http://azapa.ru/api/mag/${window.location.hostname}/products?page=1`)
             .then(response => {
                 this.products = response.data.data.slice(0,12)
                 
